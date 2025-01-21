@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Breach Detected</title>
+    <style>
+        body {
+            background-color: black;
+            color: lime;
+            font-family: monospace;
+            padding: 20px;
+        }
+        .blinking {
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+    <script>
+        let i = 0;
+        const text = "HACKING IN PROGRESS... Please wait while we access your data.";
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("text").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            } else {
+                document.getElementById("details").style.display = "block";
+            }
+        }
+        window.onload = typeWriter;
+    </script>
+</head>
+<body>
+    <h1 id="text"></h1>
+    <div id="details" style="display:none;">
+        <p>Accessing camera...</p>
+        <p>Downloading files...</p>
+        <p class="blinking">DATA BREACH SUCCESSFUL</p>
+    </div>
+</body>
+</html>
